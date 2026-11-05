@@ -1,10 +1,11 @@
 import React from 'react';
-import GuestHome from './pages/GuestHome';
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
 
 export default function App() {
   return (
-    <div>
-      <GuestHome />
-    </div>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 }

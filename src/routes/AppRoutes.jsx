@@ -1,13 +1,14 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import GuestHome from '../pages/GuestHome';
+import Login from '../pages/Login';
 
-const Login = () => <div className="p-8 text-center text-xl font-bold">Trang Đăng Nhập</div>;
+// Bạn có thể tách TenantDashboard và AdminDashboard ra file riêng sau, 
+// hoặc giữ lại tạm thời các const dưới đây nếu chưa tạo file:
 const TenantDashboard = () => <div className="p-8 text-center text-xl text-green-600 font-bold">Dashboard Người Thuê Phòng</div>;
 const AdminDashboard = () => <div className="p-8 text-center text-xl text-blue-600 font-bold">Dashboard Chủ Trọ / Quản Lý</div>;
 
 export default function AppRoutes() {
-  // Giả lập trạng thái đăng nhập
   const isAuthenticated = false; 
 
   return (
@@ -15,7 +16,6 @@ export default function AppRoutes() {
       <Route path="/" element={<GuestHome />} />
       <Route path="/login" element={<Login />} />
 
-      {/* Nếu chưa đăng nhập mà cố vào /tenant hoặc /admin thì Navigate chuyển hướng về /login */}
       <Route 
         path="/tenant" 
         element={isAuthenticated ? <TenantDashboard /> : <Navigate to="/login" replace />} 

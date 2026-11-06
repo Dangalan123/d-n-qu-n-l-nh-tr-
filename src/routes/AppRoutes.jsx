@@ -2,11 +2,11 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import GuestHome from '../pages/GuestHome';
 import Login from '../pages/Login';
+import AdminDashboard from '../pages/AdminDashboard';
 
 // Bạn có thể tách TenantDashboard và AdminDashboard ra file riêng sau, 
 // hoặc giữ lại tạm thời các const dưới đây nếu chưa tạo file:
 const TenantDashboard = () => <div className="p-8 text-center text-xl text-green-600 font-bold">Dashboard Người Thuê Phòng</div>;
-const AdminDashboard = () => <div className="p-8 text-center text-xl text-blue-600 font-bold">Dashboard Chủ Trọ / Quản Lý</div>;
 
 export default function AppRoutes() {
   const isAuthenticated = false; 
